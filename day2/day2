@@ -1,0 +1,30 @@
+# Week 3 - Day 2: DSA Revision (Arrays, Strings & Basics)
+
+## 🧠 Focus
+Revising core programming fundamentals and important DSA concepts:
+- Basic programming constructs
+- Array operations and patterns
+- String manipulations and logic-based questions
+
+## 📚 Topics Revised
+### 🔹 Basics
+- Input & Output
+- Conditional Statements
+- Loops
+- Functions & Scope
+
+### 🔹 Arrays
+- Traversal & Insertion
+- Reversal & Maximum/Minimum element
+- Prefix Sum
+- Two-pointer logic
+
+### 🔹 Strings
+- Palindrome check
+- Frequency count
+- Reversal & comparison
+- ASCII-based operations
+
+## 💡 Summary
+Focused on revision and re-implementation of previously solved problems from these three fundamental topics.
+All solutions are included with comments explaining logic and time complexity.
