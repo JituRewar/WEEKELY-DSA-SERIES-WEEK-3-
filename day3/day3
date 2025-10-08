@@ -1,0 +1,126 @@
+# 📘 Day 3 - 2D Arrays Basics
+
+### 🗓 Weekly DSA Series - Week 3 | Day 3
+
+---
+
+## 📚 Topics Covered
+- Introduction to **2D Arrays**
+- Accessing and iterating elements
+- Basic operations on 2D arrays
+
+---
+
+## 💡 Problems Practiced
+
+### 1. Maximum Row / Column Sum
+**Concepts Used:** Nested loops, sum calculation  
+**Goal:** Find which row or column has the maximum sum.
+
+### 2. Diagonal Sum
+**Concepts Used:** Loop traversal on diagonals  
+**Goal:** Find the sum of the primary and secondary diagonals.
+
+### 3. LeetCode #74 - Search a 2D Matrix
+**Concepts Used:** Binary Search on Matrix  
+**Link:** [LeetCode Problem #74](https://leetcode.com/problems/search-a-2d-matrix/)  
+**Goal:** Determine if a target value exists in a sorted 2D matrix.
+
+---
+
+## 🧠 Learning Summary
+- Understood how memory is laid out for 2D arrays.
+- Practiced traversal through rows, columns, and diagonals.
+- Learned efficient searching techniques on 2D matrices using binary search.
+
+---
+
+## 🧩 Next Focus
+Move to **Advanced 2D Array Operations** – Matrix rotation, transpose, and boundary traversal.
+codes
+1.#include<iostream>
+#include<climits>
+using namespace std;
+int maxrawsum(int matrix[][3],int raw,int col){
+    int maxsum=INT_MIN;
+    for(int i=0;i<raw;i++){
+        int sum=0;
+        for(int j=0;j<col;j++){
+            sum+=matrix[i][j];
+        }
+        maxsum=max(maxsum,sum);
+    }
+    return maxsum;
+}
+int main(){
+        int matrix[4][3]={{1,2,3},{4,50,6},{7,8,9}};
+    int raws=3;
+    int column=3;
+    cout<<maxrawsum(matrix,raws,column);
+    return 0;
+}
+
+2.#include<iostream>
+#include<climits>
+using namespace std;
+int digonalsum(int matrix[][3],int raw,int col){
+    int sum=0;
+    // for pd:j==i
+    // sd:j==n-1-i 
+    for(int i=0;i<raw;i++){
+        sum+=matrix[i][i];
+        if(i!=raw-1-i){
+            sum+=matrix[i][raw-1-i];
+        }
+    }
+    return sum;
+}
+int main(){
+        int matrix[4][3]={{1,2,3},{4,5,6},{7,8,9}};
+    int raws=3;
+    int column=3;
+    cout<<digonalsum(matrix,raws,column);
+    return 0;
+}
+
+
+3.class Solution {
+public:
+    bool binarySearch(vector<vector<int>>& matrix, int target, int row) {
+        int n = matrix[0].size();
+        int st = 0, end = n - 1;
+        while (st <= end) {
+            int mid = st + (end - st) / 2;
+            if (matrix[row][mid] == target) {
+                return true;
+            } else if (target < matrix[row][mid]) {
+                end = mid - 1;
+            } else {
+                st = mid + 1;
+            }
+        }
+        return false;  // ❗ fixed
+    }
+
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        if (matrix.empty() || matrix[0].empty()) return false; // edge case
+
+        int m = matrix.size();
+        int n = matrix[0].size();
+        int sr = 0, er = m - 1;
+
+        while (sr <= er) {
+            int mid = sr + (er - sr) / 2;
+            if (target >= matrix[mid][0] && target <= matrix[mid][n - 1]) {
+                // target could be in this row
+                return binarySearch(matrix, target, mid);
+            } else if (target > matrix[mid][n - 1]) {
+                sr = mid + 1;  // move down
+            } else {
+                er = mid - 1;  // move up
+            }
+        }
+
+        return false;
+    }
+};
