@@ -1,0 +1,82 @@
+# 🚀 Day 5 - Spiral Matrix (LeetCode #54)
+
+### 📘 Problem Statement:
+Given an `m x n` matrix, return *all the elements of the matrix in spiral order.*
+
+**LeetCode Link:** [#54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
+
+---
+
+### 💡 Approach:
+1. We use four boundary variables — `top`, `bottom`, `left`, and `right`.
+2. Traverse the matrix layer by layer:
+   - Move **left → right** along the top row.
+   - Move **top → bottom** along the right column.
+   - Move **right → left** along the bottom row (if any rows remain).
+   - Move **bottom → top** along the left column (if any columns remain).
+3. Shrink the boundaries after each traversal.
+4. Continue until all elements are covered.
+
+---
+
+### 🧠 Complexity:
+- **Time Complexity:** O(m × n) — Each element is visited once.  
+- **Space Complexity:** O(1) — Ignoring output storage.
+
+---
+
+### 💻 Code:
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        int m=matrix.size(),n=matrix[0].size();
+        int sr=0,er=m-1,sc=0,ec=n-1;
+        
+        vector<int> ans;
+        while(sr<=er && sc<=ec){
+            //top row elements
+            for(int i=sc;i<=ec;i++){
+                ans.push_back(matrix[sr][i]);
+            }
+            //right column elements
+             for(int i=sr+1;i<=er;i++){
+                ans.push_back(matrix[i][ec]);
+            }
+            //end row elements
+             for(int i=ec-1;i>=sc;i--){
+                if(sr==er) break;
+                ans.push_back(matrix[er][i]);
+            } 
+            //left column elements
+            for(int i=er-1;i>=sr+1;i--){
+                if(sc==ec) break;
+
+                ans.push_back(matrix[i][sc]);
+            }
+                sr++; sc++;ec--;er--;
+             
+        }
+        return ans;
+    }
+};
+
+int main() {
+    Solution sol;
+    vector<vector<int>> matrix = {{1,2,3}, {4,5,6}, {7,8,9}};
+    vector<int> ans = sol.spiralOrder(matrix);
+    for (int x : ans) cout << x << " ";
+    return 0;
+}
+
+
+   🔥 Summary:
+
+Covered concept: Matrix Traversal using Boundaries
+
+Problem solved: LeetCode #54 - Spiral Matrix
+
+Concepts strengthened: 2D Array Manipulation, Simulation Logic
