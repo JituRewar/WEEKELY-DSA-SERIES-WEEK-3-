@@ -1,0 +1,38 @@
+Week 3/
+ └── Day 6 - STL Containers & Algorithms/
+      ├── list_example.cpp
+      ├── deque_example.cpp
+      ├── pair_example.cpp
+      ├── stack_queue_example.cpp
+      ├── priority_queue_example.cpp
+      ├── map_set_example.cpp
+      ├── algorithms_example.cpp
+      └── README.md
+# 🚀 Week 3 - Day 6 | STL Containers & Algorithms
+
+Today’s DSA session was all about exploring **C++ STL** — one of the most powerful toolkits for competitive programming and real-world development.
+
+### 🔍 Topics Covered:
+- **List** → Doubly linked list implementation  
+- **Deque** → Dynamic double-ended queue  
+- **Pair** → Storing two related values together  
+- **Stack & Queue** → LIFO & FIFO data structures  
+- **Priority Queue** → Max-heap / Min-heap  
+- **Map Family**
+  - `map` → Sorted unique keys  
+  - `multimap` → Sorted duplicate keys  
+  - `unordered_map` → Hash-based key-value storage  
+- **Set Family**
+  - `set` → Sorted unique elements  
+  - `multiset` → Sorted duplicates  
+  - `unordered_set` → Hash-based unique storage  
+- **Algorithms Header**
+  - `sort()`, `reverse()`, `max_element()`, `min_element()`, `count()`, `find()` etc.
+
+
+### 🧠 Learning Outcome:
+Understanding STL boosts problem-solving speed and helps in writing clean, efficient C++ code.
+
+---
+
+
