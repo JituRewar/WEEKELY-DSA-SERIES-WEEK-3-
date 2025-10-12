@@ -1,0 +1,36 @@
+# 🚀 DSA Series – Week 3 Day 7
+
+
+### 📘 Topics Covered:
+- **List**
+- **Stack**
+- **Pair**
+- **Algorithm (STL)**
+
+### 💡 Description:
+Today’s focus was on strengthening understanding of STL containers and algorithms in C++.  
+Practiced problems related to:
+- Implementation and manipulation of **lists**
+- **Stack** operations and custom use-cases
+- Using **pair** for structured data handling
+- Applying **algorithm** functions like `sort`, `reverse`, `count`, `find`, etc.
+
+### 🧩 Files:
+| File | Topic | Description |
+|------|--------|-------------|
+| `list_problems.cpp` | List | Problems using `std::list` |
+| `stack_problems.cpp` | Stack | Problems on stack operations |
+| `pair_problems.cpp` | Pair | Use of `std::pair` and nested pairs |
+| `algorithm_problems.cpp` | Algorithm | Problems using STL algorithms |
+
+### 🏁 Summary:
+- Revised container behaviors and time complexities  
+- Strengthened familiarity with STL syntax and utilities  
+- Improved problem-solving speed with standard templates
+
+### 🔗 Next Up:
+➡ Week 3 Day 8 – Queue, Deque & Priority Queue
+
+---
+
+⭐ **Consistency over intensity — keep coding daily!**
